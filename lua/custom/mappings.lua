@@ -1,6 +1,20 @@
 local M = {}
 
 
+M.disabled = {
+  n = {
+    ["<leader>b"] = "",
+  },
+}
+
+M.nvimtree = {
+  n = {
+    ["<C-b>"] = { "<cmd> NvimTreeToggle <CR>", "󰔱 Toggle nvimtree" },
+  },
+  i = {
+    ["<C-b>"] = { "<cmd> NvimTreeToggle <CR>", "󰔱 Toggle nvimtree" },
+  },
+}
 
 M.crates = {
   plugin = true,
@@ -21,17 +35,6 @@ M.rusttools = {
         require'rust-tools'.open_cargo_toml.open_cargo_toml()
       end,
       "Open Cargo.toml file"
-    },
-  },
-}
-
-M.extras = {
-  n = {
-    ["<leader>f"] = {
-      function ()
-      vim.lsp.buf.format()
-      end,
-      "Format buffer"
     },
   },
 }
